@@ -1,0 +1,41 @@
+1. Create a Spring Boot project with the following dependencies
+	- web
+	- devtools
+	- h2
+	- data jpa
+	- lombok
+
+2. Configure project in application.properties
+
+server.port = 8083
+
+# data source configuration
+
+spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:empdb
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.h2.console.path=/h2
+
+#hibernate configuration
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+
+2. Create an entity class in entity package
+		Product, Order, Student, Department, 
+
+	use the following
+	@Data
+	@NoArgConstructor
+	@AllArgConstructor
+
+	@Entity
+	@Table(name = "tablename")
+
+	@Id
+	@Column
+
+3. Create a Repository interface extending from JpaRepository
+4. Create a Service interface with the crud methods
+5. Create a Service class implementing the interface with the crud methods
+6. Create a controller class with the postmapping end point for creating a resource in the database
